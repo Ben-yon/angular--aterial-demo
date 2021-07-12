@@ -19,7 +19,7 @@
 <button class="mat-button">Click me!</button>
 <button class="mat-raised-button">Click me!</button>
 <button class="mat-flat-button">click me</button>
-<button class="mat-flat-stroked-button">Click me!</button>
+<button class="mat-stroked-button">Click me!</button>
 <button class="mat-icon-button">icon</button>
 <button class="mat-fab">Fab</button>
 <button class="mat-mini-fab">Minifab</button>
@@ -32,4 +32,18 @@
   <button color="primary" mat-raised-button>Primary</button>
   <button color="accent" mat-raised-button>Accent</button>
   <button color="warn" mat-raised-button>Warn</button>
+</div>
+
+<div>
+  <mat-button-toggle #toggleBtn checked disableRipple>Toggle</mat-button-toggle>
+  {{toggleBtn.checked}}
+</div>
+
+<div>
+  <mat-button-toggle-group #toggleGroup="matButtonToggleGroup" multiple>
+    <mat-button-toggle value="angular">Angular</mat-button-toggle>
+    <mat-button-toggle value="react">React</mat-button-toggle>
+    <mat-button-toggle value="vue">Vue</mat-button-toggle>
+  </mat-button-toggle-group>
+  {{toggleGroup.value}}
 </div>
