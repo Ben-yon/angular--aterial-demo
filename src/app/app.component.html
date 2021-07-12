@@ -54,7 +54,7 @@
 </div><br>
 
 <div>
-  <span matBadge="10"><mat-icon>mail</mat-icon></span><br>
+  <span [matBadge]="notification" [matBadgeHidden]="notification === 0"><mat-icon>mail</mat-icon></span><br>
 </div><br>
   <div>
     <span matBadge="7" matBadgePosition="above before" matBadgeSize="small" matBadgeColor="primary">Notification</span>
@@ -65,3 +65,9 @@
 <div>
   <span matBadge="7" matBadgePosition="below after" matBadgeSize="large" matBadgeColor="warn" matBadgeOverlap="false">Notification</span>
 </div>
+
+<div>
+  <mat-progress-spinner value="60"></mat-progress-spinner>
+</div>
+<mat-spinner *ngIf="showSpinner" color="warn"></mat-spinner>
+<button mat-raised-button (click)="loadData()">Load Spinner</button>
