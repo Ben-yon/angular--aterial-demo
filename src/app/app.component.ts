@@ -18,4 +18,8 @@ export class AppComponent {
       this.showSpinner = false;
     }, 5000);
   }
+
+  log(state: string){
+    console.log(state);
+  }
 }

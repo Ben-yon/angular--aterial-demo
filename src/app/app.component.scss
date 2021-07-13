@@ -1,11 +1,26 @@
-.button {
-  margin-right: 3rem;
-}
+// .button {
+//   margin-right: 3rem;
+// }
 
-.navbar{
-  justify-content: space-between;
-}
+// .navbar{
+//   justify-content: space-between;
+// }
 
-.navbar div:nth-child(2) span{
-  margin-right: 3rem;
+// .navbar div:nth-child(2) span{
+//   margin-right: 3rem;
+// }
+
+
+mat-sidenav {
+  background-color: powderblue;
+  width: 200px;
+  padding: 16px;;
+
+  &-container{
+    height: 100%;
+  }
+  &-content{
+    padding: 16px;
+  }
+
 }

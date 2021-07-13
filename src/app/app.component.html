@@ -1,68 +1,79 @@
-<mat-toolbar color="primary" class="navbar">
+<!-- <mat-toolbar color="primary" class="navbar">
   <div><span>Codeinnova</span></div>
   <div>
     <span>Home</span>
     <span>Contact</span>
     <span>About</span>
   </div>
-</mat-toolbar>
+</mat-toolbar> -->
 
-<button mat-raised-button>hello world</button>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" [(opened)]="opened" (opened)="log('opened')" (closed)="log('closed')">Sidenav</mat-sidenav>
+  <mat-sidenav-content>main
+    <button mat-raised-button color="primary" (click)="opened=!opened">toggle opened</button>
+    <button (click)="sidenav.open()" mat-flat-button>Open</button>
+    <button mat-raised-button (click)="sidenav.close()">Close</button>
+    <button mat-stroked-button (click)="sidenav.toggle()">Toggle</button>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+<!-- <button mat-raised-button>hello world</button> -->
 <!-- angular material typography -->
-<div class="mat-display-4">this is display 4</div>
+<!-- <div class="mat-display-4">this is display 4</div>
 <div class="mat-display-3">this is display 3</div>
 <div class="mat-display-2">this is display 2</div>
-<div class="mat-display-1">this is display 1</div>
+<div class="mat-display-1">this is display 1</div> -->
 
-<div class="mat-headline">this is a heading for h1</div>
+<!-- <div class="mat-headline">this is a heading for h1</div>
 <div class="mat-title">this is a heading for h2</div>
 <div class="mat-subheading-2">This is a heading for h3</div>
-<div class="mat-subheading-1">this is a heading for h4</div>
+<div class="mat-subheading-1">this is a heading for h4</div> -->
 
 
-<div class="mat-body-1">This is the body text</div>
+<!-- <div class="mat-body-1">This is the body text</div>
 <div class="mat-body-2">this is bold body text</div>
-<div class="mat-caption">This is a caption text</div>
+<div class="mat-caption">This is a caption text</div> -->
 
 <!-- buttons -->
-<button class="mat-button">Click me!</button>
+<!-- <button class="mat-button">Click me!</button>
 <button class="mat-raised-button">Click me!</button>
 <button class="mat-flat-button">click me</button>
 <button class="mat-stroked-button">Click me!</button>
 <button class="mat-icon-button">icon</button>
 <button class="mat-fab">Fab</button>
-<button class="mat-mini-fab">Minifab</button>
+<button class="mat-mini-fab">Minifab</button> -->
 
 <!-- button colors -->
-<div>
+<!-- <div>
   <button color="primary" mat-button>Primary</button>
   <button color="accent" mat-button>Accent</button>
   <button color="warn" mat-button>Warn</button>
   <button color="primary" mat-raised-button>Primary</button>
   <button color="accent" mat-raised-button>Accent</button>
   <button color="warn" mat-raised-button>Warn</button>
-</div>
+</div> -->
 
-<div>
+<!-- <div>
   <mat-button-toggle #toggleBtn checked disableRipple>Toggle</mat-button-toggle>
   {{toggleBtn.checked}}
-</div>
+</div> -->
 
-<div>
+<!-- <div>
   <mat-button-toggle-group #toggleGroup="matButtonToggleGroup" multiple>
     <mat-button-toggle value="angular">Angular</mat-button-toggle>
     <mat-button-toggle value="react">React</mat-button-toggle>
     <mat-button-toggle value="vue">Vue</mat-button-toggle>
   </mat-button-toggle-group>
   {{toggleGroup.value}}
-</div>
+</div> -->
 
-<div>
+<!-- <div>
   <mat-icon color="accent">lock</mat-icon>
   <mat-icon>account_circle</mat-icon>
-</div><br>
+</div><br> -->
 
-<div>
+<!-- <div>
   <span [matBadge]="notification" [matBadgeHidden]="notification === 0"><mat-icon>mail</mat-icon></span><br>
 </div><br>
   <div>
@@ -73,10 +84,10 @@
   </div><br>
 <div>
   <span matBadge="7" matBadgePosition="below after" matBadgeSize="large" matBadgeColor="warn" matBadgeOverlap="false">Notification</span>
-</div>
+</div> -->
 
-<div>
+<!-- <div>
   <mat-progress-spinner value="60"></mat-progress-spinner>
 </div>
 <mat-spinner *ngIf="showSpinner" color="warn"></mat-spinner>
-<button mat-raised-button (click)="loadData()">Load Spinner</button>
+<button mat-raised-button (click)="loadData()">Load Spinner</button> -->
