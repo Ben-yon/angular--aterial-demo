@@ -90,7 +90,22 @@
   <mat-tab label="React">React Tab</mat-tab>
   <mat-tab label="Vue">Vue View</mat-tab>
 </mat-tab-group>
-{{ tabRef.selectedIndex }}
+
+<mat-vertical-stepper>
+  <mat-step label="Shipping Address">
+    <p>Shipping Address</p>
+  </mat-step>
+  <mat-step label="Billing Address">
+      <p>Billing Address Details</p>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+  </mat-step>
+  <mat-step label="Place Order">
+    <p>Place Order</p>
+  </mat-step>
+</mat-vertical-stepper>
 <!-- <mat-list dense>
   <mat-list-item>Item 1</mat-list-item>
   <mat-list-item>Item 2</mat-list-item>
