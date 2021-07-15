@@ -11,6 +11,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatCardModule } from '@angular/material/card'
 
 const material = [
   MatButtonModule,
@@ -24,7 +25,8 @@ const material = [
   MatListModule,
   MatDividerModule,
   MatGridListModule,
-  MatExpansionModule
+  MatExpansionModule,
+  MatCardModule
 
 ];
 
