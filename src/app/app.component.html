@@ -85,6 +85,12 @@
     <button mat-flat-button>be Great</button>
   </mat-card-actions>
 </mat-card>
+<mat-tab-group #tabRef (selectedIndexChange)="logChange(tabRef.selectedIndex)">
+  <mat-tab label="Angular">Angular</mat-tab>
+  <mat-tab label="React">React Tab</mat-tab>
+  <mat-tab label="Vue">Vue View</mat-tab>
+</mat-tab-group>
+{{ tabRef.selectedIndex }}
 <!-- <mat-list dense>
   <mat-list-item>Item 1</mat-list-item>
   <mat-list-item>Item 2</mat-list-item>

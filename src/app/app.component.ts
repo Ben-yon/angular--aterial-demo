@@ -22,4 +22,8 @@ export class AppComponent {
   log(state: string){
     console.log(state);
   }
+
+  logChange(index: any){
+    console.log(index);
+  }
 }
