@@ -43,7 +43,36 @@
 <button mat-raised-button [matMenuTriggerData]="{ name: 'Akua'}" [matMenuTriggerFor]="lazyMenu">
   Akua
 </button>
-
+<mat-accordion multi="true" hideToggle>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Angular Fundamentals
+      </mat-panel-title>
+      <mat-panel-description>
+        Total duration: 3 hours
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>Life could be better if you make the right decisions.</p>
+    <mat-action-row>
+      <button mat-button>Enroll</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Angular Fundamentals
+      </mat-panel-title>
+      <mat-panel-description>
+        Total duration: 3 hours
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>Life could be better if you make the right decisions.</p>
+    <mat-action-row>
+      <button mat-button>Enroll</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>
 <!-- <mat-list dense>
   <mat-list-item>Item 1</mat-list-item>
   <mat-list-item>Item 2</mat-list-item>
