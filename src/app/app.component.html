@@ -126,6 +126,16 @@
   </mat-select>
 </mat-form-field>
 
+<form action="">
+  <mat-form-field>
+    <input type="text" matInput [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+      <mat-option *ngFor="let option of objectOptions" [value]="option">
+        {{ option.name }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>
 <!-- <mat-list dense>
   <mat-list-item>Item 1</mat-list-item>
   <mat-list-item>Item 2</mat-list-item>

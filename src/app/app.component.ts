@@ -26,4 +26,16 @@ export class AppComponent {
   logChange(index: any){
     console.log(index);
   }
+
+  options: string[] = ['angular', 'vue', 'react'];
+  objectOptions = [
+    { name: 'Angular'},
+    { name: 'Angular Material'},
+    { name: 'React'},
+    { name: 'Vue'}
+  ];
+
+  displayFn(subject: { name: any; }){
+    return subject ? subject.name : undefined;
+  }
 }
