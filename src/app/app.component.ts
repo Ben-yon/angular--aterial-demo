@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,8 @@ import { map, startWith } from 'rxjs/operators';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
+  constructor(private snackBar: MatSnackBar){}
+
   title = 'angular-material-demo';
   notification = 0;
 
@@ -62,4 +65,26 @@ export class AppComponent implements OnInit{
   displayFn(subject: { name: any; }){
     return subject ? subject.name : undefined;
   }
+
+  openSnackbar(message: string, action: string){
+    let snackBarRef = this.snackBar.open(message, action, {duration: 2000});
+    snackBarRef.afterDismissed().subscribe(() => {
+      console.log('the snackbar was dismissed');
+    })
+    snackBarRef.onAction().subscribe(() => {
+      console.log("action");
+    })
+  }
+  openCustomSnackBar(){
+    this.snackBar.openFromComponent(CustomSnackBarComponent, {duration: 2000});
+  }
+
 }
+
+
+@Component({
+  selector: 'custom-snackbar',
+  template: `<span style="color: orange">Custom Snackbar</span>`
+})
+
+export class CustomSnackBarComponent{}

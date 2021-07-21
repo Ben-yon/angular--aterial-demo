@@ -156,8 +156,10 @@
   <mat-datepicker-toggle [for]="myDatepicker" matSuffix></mat-datepicker-toggle>
   <mat-datepicker #myDatepicker></mat-datepicker>
 </mat-form-field>
-
+<br>
 <button mat-raised-button matTooltip="welcome to my world" matTooltipPosition="after" matTooltipShowDelay="2000" matTooltipHideDelay="2000">Hello</button>
+<button mat-flat-button (click)="openSnackbar('Message deleted', 'dismiss')">snackbar display</button>
+<button mat-button (click)="openCustomSnackBar()">Open custom snackbar </button>
 <!-- <mat-list dense>
   <mat-list-item>Item 1</mat-list-item>
   <mat-list-item>Item 2</mat-list-item>
