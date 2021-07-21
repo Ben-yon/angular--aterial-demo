@@ -150,6 +150,12 @@
 <mat-radio-button value='react'>React</mat-radio-button>
 <mat-radio-button value='vue'>Vue</mat-radio-button>
 </mat-radio-group>
+
+<mat-form-field>
+  <input matInput [matDatepicker]="myDatepicker" [matDatepickerFilter]="dateFilter">
+  <mat-datepicker-toggle [for]="myDatepicker" matSuffix></mat-datepicker-toggle>
+  <mat-datepicker #myDatepicker></mat-datepicker>
+</mat-form-field>
 <!-- <mat-list dense>
   <mat-list-item>Item 1</mat-list-item>
   <mat-list-item>Item 2</mat-list-item>

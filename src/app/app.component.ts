@@ -29,7 +29,13 @@ export class AppComponent implements OnInit{
 
   showSpinner = false;
   opened = false;
+  minDate = new Date();
+  maxDate = new Date(2019, 3, 10);
 
+  dateFilter = (date: any) => {
+    const day = date.getDay();
+    return day !== 0 && day !== 6;
+  }
   loadData(){
     this.showSpinner = true;
     setTimeout(()=> {
