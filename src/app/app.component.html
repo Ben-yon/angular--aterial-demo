@@ -183,14 +183,14 @@
     <mat-cell *matCellDef="let element">{{ element.weight}}</mat-cell>
   </ng-container>
 
-  <!-- Symbol -->
+  <!-- Symbol Column-->
   <ng-container matColumnDef="symbol">
     <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
     <mat-cell *matCellDef="let element">{{element.symbol}}</mat-cell>
   </ng-container>
 
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  <mat-row (click)="logData(row)" *matRowDef="let row; columns: displayedColumns;"></mat-row>
 </mat-table>
 <!-- <mat-list dense>
   <mat-list-item>Item 1</mat-list-item>

@@ -105,6 +105,9 @@ export class AppComponent implements OnInit{
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = this.ELEMENT_DATA;
 
+  logData(row: { name: string}){
+    console.log(row.name);
+  }
 }
 
 
