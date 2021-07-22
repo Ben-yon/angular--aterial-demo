@@ -1,8 +1,10 @@
+import { DialogExampleComponent } from './dialog-example/dialog-example.component';
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +12,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
-  constructor(private snackBar: MatSnackBar){}
+  constructor(private snackBar: MatSnackBar, public dialog: MatDialog){}
 
   title = 'angular-material-demo';
   notification = 0;
@@ -77,6 +79,14 @@ export class AppComponent implements OnInit{
   }
   openCustomSnackBar(){
     this.snackBar.openFromComponent(CustomSnackBarComponent, {duration: 2000});
+  }
+
+  openDialog(){
+    let dialogRef = this.dialog.open(DialogExampleComponent, {data: { name: 'Marvelous'}});
+
+    dialogRef.afterClosed().subscribe( result => {
+      console.log(`Dialog result: ${result}`)
+    })
   }
 
 }

@@ -6,14 +6,16 @@ import { AppComponent, CustomSnackBarComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
+import { DialogExampleComponent } from './dialog-example/dialog-example.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CustomSnackBarComponent
+    CustomSnackBarComponent,
+    DialogExampleComponent
   ],
-  entryComponents:[CustomSnackBarComponent],
+  entryComponents:[CustomSnackBarComponent, DialogExampleComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
