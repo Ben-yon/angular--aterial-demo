@@ -22,7 +22,7 @@ import { DialogExampleComponent } from './dialog-example/dialog-example.componen
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
