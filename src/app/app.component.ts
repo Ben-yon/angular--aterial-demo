@@ -109,6 +109,10 @@ export class AppComponent implements OnInit{
   logData(row: { name: string}){
     console.log(row.name);
   }
+
+  applyFilter(filterValue: string){
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 }
 
 

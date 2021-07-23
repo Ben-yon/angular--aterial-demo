@@ -165,7 +165,7 @@
 <!-- <button mat-raised-button (click)="openDialog()">dialog</button> -->
 
 <mat-form-field>
-  <input matInput placeholder="Search"  required>
+  <input (keyup)="applyFilter($event.target.value)" matInput placeholder="Search">
 </mat-form-field>
 <mat-table [dataSource]="dataSource" class="mat-elevation-z10">
   <!-- Position Column -->
