@@ -162,9 +162,12 @@
 <button mat-button (click)="openCustomSnackBar()">Open custom snackbar </button> -->
 
 
-<button mat-raised-button (click)="openDialog()">dialog</button>
+<!-- <button mat-raised-button (click)="openDialog()">dialog</button> -->
 
-<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<mat-form-field>
+  <input matInput placeholder="Search"  required>
+</mat-form-field>
+<mat-table [dataSource]="dataSource" class="mat-elevation-z10">
   <!-- Position Column -->
   <ng-container matColumnDef="position">
     <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>

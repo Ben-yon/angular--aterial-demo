@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
+import { MatTableDataSource } from '@angular/material/table';
 
 
 @Component({
@@ -103,7 +104,7 @@ export class AppComponent implements OnInit{
       {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
   ];
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = this.ELEMENT_DATA;
+  dataSource = new MatTableDataSource(this.ELEMENT_DATA);
 
   logData(row: { name: string}){
     console.log(row.name);
