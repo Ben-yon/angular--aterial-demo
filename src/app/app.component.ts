@@ -1,20 +1,20 @@
 import { PeriodElements } from './elements';
 import { DialogExampleComponent } from './dialog-example/dialog-example.component';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
-
+import { MatSort, Sort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit, AfterViewInit{
   constructor(private snackBar: MatSnackBar, public dialog: MatDialog){}
 
   title = 'angular-material-demo';
@@ -23,11 +23,15 @@ export class AppComponent implements OnInit{
    myControl = new FormControl();
    filteredOptions!: Observable<string[]>;
 
+   @ViewChild(MatSort) sort!: MatSort;
    ngOnInit(){
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(''),
       map(value => this._filter(value))
     );
+   }
+   ngAfterViewInit(){
+    this.dataSource.sort = this.sort;
    }
 
    private _filter(value: string): string[] {
