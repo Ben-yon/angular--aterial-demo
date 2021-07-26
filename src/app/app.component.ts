@@ -7,7 +7,8 @@ import { map, startWith } from 'rxjs/operators';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
-import { MatSort, Sort } from '@angular/material/sort';
+import { MatSort } from '@angular/material/sort';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-root',
@@ -24,6 +25,7 @@ export class AppComponent implements OnInit, AfterViewInit{
    filteredOptions!: Observable<string[]>;
 
    @ViewChild(MatSort) sort!: MatSort;
+   @ViewChild(MatPaginator) paginator!: MatPaginator;
    ngOnInit(){
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(''),
@@ -32,6 +34,7 @@ export class AppComponent implements OnInit, AfterViewInit{
    }
    ngAfterViewInit(){
     this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator
    }
 
    private _filter(value: string): string[] {

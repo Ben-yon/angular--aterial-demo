@@ -167,7 +167,8 @@
 <mat-form-field>
   <input (keyup)="applyFilter($event.target.value)" matInput placeholder="Search">
 </mat-form-field>
-<mat-table [dataSource]="dataSource" matSort class="mat-elevation-z10">
+<div class="mat-elevation-z10">
+<mat-table [dataSource]="dataSource" matSort>
   <!-- Position Column -->
   <ng-container matColumnDef="position">
     <mat-header-cell *matHeaderCellDef mat-sort-header> No. </mat-header-cell>
@@ -195,6 +196,8 @@
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
   <mat-row (click)="logData(row)" *matRowDef="let row; columns: displayedColumns;"></mat-row>
 </mat-table>
+<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
 <!-- <mat-list dense>
   <mat-list-item>Item 1</mat-list-item>
   <mat-list-item>Item 2</mat-list-item>
