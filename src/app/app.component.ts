@@ -16,7 +16,12 @@ import { MatPaginator } from '@angular/material/paginator';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, AfterViewInit{
-  constructor(private snackBar: MatSnackBar, public dialog: MatDialog){}
+  numbers: Number[] = [];
+  constructor(private snackBar: MatSnackBar, public dialog: MatDialog){
+    for(let i=0; i <= 1000; i++){
+      this.numbers.push(i);
+    }
+  }
 
   title = 'angular-material-demo';
   notification = 0;

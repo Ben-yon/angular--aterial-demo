@@ -31,3 +31,15 @@ mat-sidenav {
 mat-grid-tile{
   background-color: powderblue;
 }
+
+.number{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid maroon;
+  box-sizing: border-box;
+  height: 100px;
+}
+.container{
+  height: 400px;
+ }
