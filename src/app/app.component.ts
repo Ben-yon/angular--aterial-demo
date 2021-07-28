@@ -9,6 +9,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
+import { SocketIoService } from './services/socket-io.service';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,7 @@ import { MatPaginator } from '@angular/material/paginator';
 })
 export class AppComponent implements OnInit, AfterViewInit{
   numbers: Number[] = [];
-  constructor(private snackBar: MatSnackBar, public dialog: MatDialog){
+  constructor(private snackBar: MatSnackBar, public dialog: MatDialog, private webSocket: SocketIoService){
     for(let i=0; i <= 1000; i++){
       this.numbers.push(i);
     }
@@ -36,6 +37,10 @@ export class AppComponent implements OnInit, AfterViewInit{
       startWith(''),
       map(value => this._filter(value))
     );
+    // here we listen to an event
+    this.webSocket.listen('test event').subscribe((data)=>{
+      console.log(data); 
+    })
    }
    ngAfterViewInit(){
     this.dataSource.sort = this.sort;
